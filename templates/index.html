@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+    <p>Take a guess!</p>
+
+    {% if result == 'low' %}
+    <div>
+        <div class="result-box low">Too low!</div>
+    </div>
+    {% elif result == 'high' %}
+    <div>
+        <div class="result-box high">Too high!</div>
+    </div>
+    {% elif result == 'correct' %}
+    <div class="correct-row">
+        <div class="result-box correct">
+            <div>{{ secret }} was the<br>number!</div>
+            <form action="/" method="GET">
+                <button type="submit" class="play-again-btn">Play again!</button>
+            </form>
+        </div>
+        <div class="sticky-note">
+            clicking on 'play again' resets the session and starts the game again.
+        </div>
+    </div>
+    {% elif result == 'lose' %}
+    <div>
+        <div class="result-box lose">
+            <div>You lose!<br>It was {{ secret }}.</div>
+            <form action="/" method="GET">
+                <button type="submit" class="play-again-btn">Play again!</button>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if result != 'correct' %}
+    <div class="guess-form">
+        <form action="/guess" method="POST">
+            <input type="number" name="guess" min="1" max="100" autofocus>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    {% endif %}
+
+</body>
+
+</html>

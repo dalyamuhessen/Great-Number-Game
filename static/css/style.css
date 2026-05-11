@@ -1,0 +1,98 @@
+body {
+  font-family: Georgia, serif;
+  background-color: white;
+  text-align: center;
+  padding: 40px;
+}
+h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+p {
+  margin: 4px 0;
+  font-size: 1em;
+}
+
+.result-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 160px;
+  margin: 20px auto;
+  color: white;
+  font-size: 1.4em;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.low,
+.high {
+  background-color: #cc2200;
+}
+.correct {
+  background-color: #33aa44;
+  flex-direction: column;
+}
+.lose {
+  background-color: #cc2200;
+  flex-direction: column;
+}
+
+.play-again-btn {
+  margin-top: 10px;
+  padding: 6px 16px;
+  font-size: 0.85em;
+  cursor: pointer;
+  background-color: #dddddd;
+  border: 2px outset #aaaaaa;
+}
+
+.guess-form {
+  margin-top: 20px;
+}
+input[type="number"] {
+  width: 100px;
+  padding: 4px;
+  font-size: 1em;
+  border: 1px solid #aaa;
+}
+input[type="submit"] {
+  display: block;
+  margin: 6px auto 0;
+  padding: 4px 14px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #dddddd;
+  border: 2px outset #aaaaaa;
+}
+
+.correct-row {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 20px auto;
+}
+
+.sticky-note {
+  background-color: #ffe97a;
+  border: 1px solid #d4b800;
+  width: 150px;
+  padding: 10px;
+  font-size: 0.78em;
+  text-align: left;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin-top: 8px;
+}
+.sticky-note::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 10px;
+  background: #cc3333;
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
